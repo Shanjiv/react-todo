@@ -12,7 +12,7 @@ var TodoApp= React.createClass({
     return {
       showCompleted: false,
       searchText: '',
-      todos: todoAPI.getTodos()
+      todos: TodoAPI.getTodos()
     };
   },
   componentDidUpdate: function () {
@@ -38,7 +38,9 @@ var TodoApp= React.createClass({
       }
       return todo;
     });
-    this.setState({todos: updatedTodos});
+    this.setState({
+      todos: updatedTodos
+    });
   },
   handleSearch: function (showCompleted, searchText) {
     this.setState({
